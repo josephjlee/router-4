@@ -3,7 +3,7 @@
 namespace Src;
 
 use Src\Dispatcher;
-use Src\RouteCollection;
+use Src\RouterCollection;
 
 class Router
 {
@@ -12,7 +12,7 @@ class Router
 
     public function __construct()
     {
-        $this->collection = new RouteCollection;
+        $this->collection = new RouterCollection;
         $this->dispatcher = new Dispatcher;
     }
 
@@ -42,7 +42,7 @@ class Router
 
     public function find($type_request, $pattern)
     {
-        return $this->collection->find($type_request, $pattern);
+        return $this->collection->where($type_request, $pattern);
     }
 
     protected function dispatch($route, $namespace = "App\\")
