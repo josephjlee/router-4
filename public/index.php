@@ -4,4 +4,4 @@ require __DIR__.'/../bootstrap.php';
 
 
 $request = new Src\Request;
-$router->find($request);
+$router->resolve($request);

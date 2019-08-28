@@ -59,8 +59,6 @@ class Router
     {
         $route = $this->find($request->method(), $request->uri());
 
-        var_dump($route); exit();
-
         if ($route) {
             return $this->dispatch($route);
         }
