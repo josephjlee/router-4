@@ -70,7 +70,7 @@ class RouterCollection
     {
         $pattern_sent = $this->parseUri($pattern_sent);
 
-        foreach ($this->routes_post as $pattern => $callback) {
+        foreach ($this->routes_get as $pattern => $callback) {
             if (preg_match($pattern, $pattern_sent, $pieces)) {
                 return (object) ['callback' => $callback, 'uri' => $pieces];
             }
@@ -82,7 +82,7 @@ class RouterCollection
     {
         $pattern_sent = $this->parseUri($pattern_sent);
 
-        foreach ($this->routes_post as $pattern => $callback) {
+        foreach ($this->routes_put as $pattern => $callback) {
             if (preg_match($pattern, $pattern_sent, $pieces)) {
                 return (object) ['callback' => $callback, 'uri' => $pieces];
             }
@@ -94,7 +94,7 @@ class RouterCollection
     {
         $pattern_sent = $this->parseUri($pattern_sent);
 
-        foreach ($this->routes_post as $pattern => $callback) {
+        foreach ($this->routes_delete as $pattern => $callback) {
             if (preg_match($pattern, $pattern_sent, $pieces)) {
                 return (object) ['callback' => $callback, 'uri' => $pieces];
             }

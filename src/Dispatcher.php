@@ -4,7 +4,7 @@ namespace Src;
 
 class Dispatcher
 {
-    public function dispatch($callback, $params = [], $namespace = "App\\")
+    public function dispatch($callback, array $params = [], $namespace = "App\\")
     {
         if (is_callable($callback)) {
             return call_user_func_array($callback, array_values($params));
